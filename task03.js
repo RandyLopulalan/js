@@ -12,23 +12,21 @@
 
 const digitAngka = (str) => {
   const newDigit = str.replace(/([.-]|[a-z])/gi, "");
-  //   const arr = newDigit.split("");
-  //   if (arr[0] === 1) {
-  //     return 1;
-  //   } else {
-  //     if(arr[0] === )
-  //     arr[0] -= 1
-  //     let digit = arr[0];
-  //     for (let i = 0; i < arr.length - 1; i++) {
-  //       digit = digit + "0";
-  //     }
-  //     const newData = digit.split("");
-  //     newData.pop();
-  //     const newString = newData.join("");
-  //     console.log(newString);
-  //   }
+  const arr = newDigit.split("");
+  if (arr.length === 1) {
+    return console.log('1');;
+  } else {
+    let digit = arr[0];
+    for (let i = 0; i < arr.length - 1; i++) {
+      digit = digit + "0";
+    }
+    
+    const newArr = digit.split("").join("");
+    arr.shift()
+    const a = arr.join("")
 
-  return newDigit;
+    return console.log(newArr), digitAngka(a)
+  }
 };
 
-console.log(digitAngka("9.86-A5.321"));
+digitAngka("9.86-A5.321")
